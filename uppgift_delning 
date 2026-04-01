@@ -1,0 +1,11 @@
+Uppgift 2:
+     klasserna
+Devran: Item, Book
+Abdullah: LongPlay, Order
+Viktor: Recording, CompactDisc
+
+Gränsnitt
+Devran:Priceable
+Viktor: PriceableWithVAT6
+Abdullahi : PriceableWithVAT25
+
