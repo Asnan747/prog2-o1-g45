@@ -13,12 +13,25 @@ public class Order {
         counter++;
     }
 
+    // metod för att lägga Item i listan.
     private void addItemsToList(Item... items) {
         for(Item item : items) {
             if(item != null) {
                 itemsList.add(item);
             }
         }
+    }
+
+    public double getTotalValue() {
+      return 0.04;
+    }
+
+    public double getTotalValuePlusVAT() {
+        return 00.3;
+    }
+
+    public String getReceipt() {
+        return "Receipt";
     }
 
 
