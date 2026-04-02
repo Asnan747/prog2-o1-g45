@@ -22,11 +22,17 @@ public class Order {
         }
     }
 
+    //addera price för varje item i Lista och returnera värdet
     public double getTotalValue() {
-      return 0.04;
-    }
+        double totalValue = 0;
+        for(Item item: itemsList) {
+            totalValue+=item.getPrice();
+        }
 
+        return totalValue;
+    }
     public double getTotalValuePlusVAT() {
+        // example output
         return 00.3;
     }
 
