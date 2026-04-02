@@ -3,11 +3,25 @@ package se.su.ovning1;
 import java.util.ArrayList;
 
 public class Order {
-    ArrayList<Item[]> items = new ArrayList<>();
+    final ArrayList<Item> itemsList = new ArrayList<>();
+    final long orderNumber;
+    static long counter;
     // ta in valfrit antal Items och lägga till i listan.
     public Order(Item... item) {
-        items.add(item);
+        addItemsToList(item);
+        this.orderNumber = counter;
+        counter++;
     }
+
+    private void addItemsToList(Item... items) {
+        for(Item item : items) {
+            if(item != null) {
+                itemsList.add(item);
+            }
+        }
+    }
+
+
 
 
 }
