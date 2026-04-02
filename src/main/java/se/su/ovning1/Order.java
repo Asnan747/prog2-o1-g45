@@ -31,9 +31,15 @@ public class Order {
 
         return totalValue;
     }
+
+    // total pris med moms
     public double getTotalValuePlusVAT() {
-        // example output
-        return 00.3;
+        double totalPrice = 0;
+        for (Item item : itemsList) {
+            totalPrice += item.getPriceWithVAT();
+        }
+
+        return totalPrice;
     }
 
     public String getReceipt() {
