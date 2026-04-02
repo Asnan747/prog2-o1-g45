@@ -26,11 +26,20 @@ public abstract class Recording {
     }
 
     public double getPrice() {
-        return price;
+        double newPrice = price * ((double)condition / 10);
+        //Den får inte gå under 10
+        if (newPrice < 10) {
+            return 10;
+        }
+        return newPrice;
     }
 
     public int getYear() {
         return year;
     }
 
+    //Tom abstract getType metod enligt instruktioner, antar att den ska implementeras CompactDisc och LongPlay
+    public abstract String getType();
+
 }
+
