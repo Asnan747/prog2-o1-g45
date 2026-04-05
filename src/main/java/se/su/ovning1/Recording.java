@@ -3,13 +3,14 @@ package se.su.ovning1;
 public abstract class Recording {
 
     //Variabler
+    private String name;
     private String artist;
     private int year;
     private int condition;
     private double price;
 
     //Konstruktor
-    public Recording(String artist, int year, int condition, double price) {
+    public Recording(String name, String artist, int year, int condition, double price) {
         this.artist = artist;
         this.year = year;
         this.condition = condition;
