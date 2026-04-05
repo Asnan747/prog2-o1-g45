@@ -43,10 +43,19 @@ public class Order {
     }
 
     public String getReceipt() {
-        return "Receipt";
+        String orderInformation = "Receipt for order NO: " + orderNumber + "\n" + "---------------- \n" + getOrderInformation();
+        String orderPriceInfo = "Total excl. VAT:" + getTotalValue() + "\n" + "Total incl. VAT:" + getTotalValuePlusVAT();
+        return orderInformation + "\n" + orderPriceInfo;
     }
 
 
+    protected String getOrderInformation() {
+        String itemsInfo = "";
+        for(Item item: itemsList) {
+           itemsInfo+= item.toString() + "\n";
+        }
 
+        return itemsInfo;
+    }
 
 }
