@@ -12,10 +12,11 @@ public class LongPlay extends Recording{
     }
 
     public double getPrice() {
-        double newPrice = super.getPrice() * 0.1 + (getCurrentYear() - super.getYear()) * 5.0;
+        double newPrice = super.getPrice() + (getCurrentYear() - super.getYear()) * 5.0;
         return newPrice;
     }
 
+    // metod för att få nuvarande året.
     private int getCurrentYear() {
         LocalDate currentDate = LocalDate.now();
         return currentDate.getYear();
