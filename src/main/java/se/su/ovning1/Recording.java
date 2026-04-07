@@ -17,10 +17,6 @@ public abstract class Recording extends Item implements PriceableWithVAT25{
         this.price = price;
     }
 
-    public String getName() {
-        return super.getName();
-    }
-
     //Metoder
     public String getArtist() {
         return artist;
@@ -49,6 +45,16 @@ public abstract class Recording extends Item implements PriceableWithVAT25{
 
     //Tom abstract getType metod enligt instruktioner, antar att den ska implementeras CompactDisc och LongPlay
     public abstract String getType();
+
+    public String toString() {
+        return getType() + ": name=" + getName() +
+                ", artist='" + artist + "'" +
+                ", year=" + year +
+                ", condition=" + condition +
+                ", original price=" + getOriginalPrice() +
+                ", price=" + getPrice() +
+                ", price+vat=" + getPriceWithVAT();
+    }
 
 }
 

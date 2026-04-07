@@ -8,6 +8,6 @@ public class CompactDisc extends Recording {
     }
 
     public String getType() {
-        return "LP-skiva";
+        return "CD";
     }
 }
