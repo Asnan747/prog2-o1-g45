@@ -3,11 +3,10 @@ package se.su.ovning1;
 public abstract class Recording extends Item implements PriceableWithVAT25{
 
     //Variabler
-    private String name;
-    private String artist;
-    private int year;
-    private int condition;
-    private double price;
+    private final String artist;
+    private final int year;
+    private final int condition;
+    private final double price;
 
     //Konstruktor
     public Recording(String name, String artist, int year, int condition, double price) {
@@ -16,6 +15,10 @@ public abstract class Recording extends Item implements PriceableWithVAT25{
         this.year = year;
         this.condition = condition;
         this.price = price;
+    }
+
+    public String getName() {
+        return super.getName();
     }
 
     //Metoder
@@ -34,6 +37,10 @@ public abstract class Recording extends Item implements PriceableWithVAT25{
             return 10;
         }
         return newPrice;
+    }
+
+    public double getOriginalPrice() {
+        return price;
     }
 
     public int getYear() {

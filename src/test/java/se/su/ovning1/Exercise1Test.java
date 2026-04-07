@@ -55,7 +55,7 @@ public class Exercise1Test {
     @org.junit.jupiter.api.Order(12)
     @DisplayName("Book: testar att toString innehåller nödvändig information.")
     @CsvSource({"For Whom The Bell Tolls, Ernest Hemingway, 125.0, true",
-        "William Gibson, Neuromancer, 200.0, false"})
+            "William Gibson, Neuromancer, 200.0, false"})
     void bookCorrectToString(String title, String author, double price, boolean bound) {
         var book = new Book(title, author, price, bound);
         var parts = Set.of(title, author, ("" + (bound ? price * 1.3 : price)), String.valueOf(bound));
@@ -196,6 +196,7 @@ public class Exercise1Test {
     @ParameterizedTest
     @org.junit.jupiter.api.Order(22)
     @DisplayName("Recording: testar att äldre LongPlay får rätt pris.")
+    @CsvSource({"2020,10,200,225,281.25", "1950,10,200,575,718.75"})
     @CsvSource({"2020,10,200,230,287.25", "1950,10,200,580,725"})
     void recordingCorrectPriceForLPFrom2020(int year, int condition, double price, double expected, double plusVat) {
         var message = String.format("Klassen LongPlay: värdet (exkl. moms) på en LP från " + year + " beräknas inte rätt för slitage %d.", condition);
@@ -224,6 +225,7 @@ public class Exercise1Test {
     @ParameterizedTest
     @org.junit.jupiter.api.Order(23)
     @DisplayName("Recording: testar att toString innehåller nödvändig information för LP.")
+    @CsvSource({"Phoebe Bridgers, Punisher, 2021, 10, 200.0, 220.0, 275.0", "Bruce Springsteen, The River, 1980, 10, 300.0, 525.0, 656.25"})
     @CsvSource({"Phoebe Bridgers, Punisher, 2021, 10, 200.0, 225.0, 281.25", "Bruce Springsteen, The River, 1980, 10, 300.0, 530.0, 662.5"})
     void recordingCorrectToStringLP(String artist, String title, int year, int condition, double originalPrice, double price, double pricePlusVAT) {
         var item1 = new LongPlay(title, artist, year, condition, originalPrice);

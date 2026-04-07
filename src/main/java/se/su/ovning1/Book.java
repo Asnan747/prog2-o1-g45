@@ -20,16 +20,16 @@ public class Book extends Item implements PriceableWithVAT6{
     }
 
 
-    public String getType(){
+    /* public String getType(){
         return "Book";
-    }
+    } */
 
 
-    public boolean isBound(){
+    private boolean isBound(){
         return bound;
     }
 
-    public String getAuthor(){
+    private String getAuthor(){
         return author;
     }
 
